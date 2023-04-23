@@ -4,5 +4,6 @@
   },
   "[http]": {
     "editor.codeLens": true
-  }
+  },
+  "eslint.run": "onSave"
 }
