@@ -1,0 +1,8 @@
+{
+  "[json][jsonc][typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[http]": {
+    "editor.codeLens": true
+  }
+}
