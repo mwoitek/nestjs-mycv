@@ -37,3 +37,7 @@ Content-Type: application/json
   "email": "another_user@example.com",
   "password": "testpass123"
 }
+
+
+### Get currently signed in user
+GET http://localhost:3000/auth/whoami
