@@ -27,3 +27,13 @@ Content-Type: application/json
 {
   "email": "new_email@example.com"
 }
+
+
+### User signin
+POST http://localhost:3000/auth/signin
+Content-Type: application/json
+
+{
+  "email": "user@example.com",
+  "password": "testpass123"
+}
