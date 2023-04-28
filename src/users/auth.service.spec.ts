@@ -10,7 +10,6 @@ describe('AuthService', () => {
 
   beforeEach(async () => {
     const users: User[] = [];
-
     fakeUsersService = {
       find: (email: string) => {
         const filteredUsers = users.filter((user) => user.email === email);
@@ -54,14 +53,7 @@ describe('AuthService', () => {
   });
 
   it('throws an error if user signs up with email that is in use', async () => {
-    fakeUsersService.find = () =>
-      Promise.resolve([
-        {
-          id: 1,
-          email: 'user@example.com',
-          password: 'testpass123',
-        } as User,
-      ]);
+    await service.signup('user@example.com', 'testpass123');
 
     await expect(
       service.signup('user@example.com', 'testpass234')
@@ -75,14 +67,7 @@ describe('AuthService', () => {
   });
 
   it('throws if an invalid password is provided', async () => {
-    fakeUsersService.find = () =>
-      Promise.resolve([
-        {
-          id: 1,
-          email: 'user@example.com',
-          password: 'testpass123',
-        } as User,
-      ]);
+    await service.signup('user@example.com', 'testpass123');
 
     await expect(
       service.signin('user@example.com', 'wrong_password')
